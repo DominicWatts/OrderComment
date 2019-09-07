@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <xigen_ordercomments>
+            <general>
+                <enable>1</enable>
+            </general>
+            <ordercomments>
+                <checkouttitle>Add order comments</checkouttitle>
+                <display_frontend>1</display_frontend>
+                <not_collapse>1</not_collapse>
+            </ordercomments>
+        </xigen_ordercomments>
+    </default>
+</config>

@@ -1,0 +1,10 @@
+<?php if ($comment = $block->getOrderComment()): ?>
+    <section class="admin__page-section">
+        <div class="admin__page-section-title">
+            <span class="title"><?= $block->escapeHtml(__('Order Comments')) ?></span>
+        </div>
+        <div class="admin__page-section-content">
+            <?= nl2br($block->escapeHtml($comment));?>
+        </div>
+    </section>
+<?php endif; ?>

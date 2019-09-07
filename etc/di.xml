@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Xigen\OrderComment\Api\Data\OrderCommentInterface" type="Xigen\OrderComment\Helper\Data\OrderComment" />
+    <preference for="Xigen\OrderComment\Api\OrderCommentManagementInterface" type="Xigen\OrderComment\Model\OrderCommentManagement" />
+    <preference for="Xigen\OrderComment\Api\GuestOrderCommentManagementInterface" type="Xigen\OrderComment\Model\GuestOrderCommentManagement" />
+    
+    <virtualType name="Magento\Sales\Model\ResourceModel\Order\Grid">
+        <arguments>
+            <argument name="columns" xsi:type="array">
+                <item name="order_comment" xsi:type="string">sales_order.order_comment</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Magento\Sales\Api\OrderRepositoryInterface">
+        <plugin name="xigen_load_ordercomment" type="Xigen\OrderComment\Plugin\Model\Order\LoadOrderComment"/>
+    </type>
+</config>
