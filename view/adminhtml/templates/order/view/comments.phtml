@@ -1,10 +1,12 @@
-<?php if ($comment = $block->getOrderComment()): ?>
+<?php if ($comment = $block->getOrderComment()) : ?>
     <section class="admin__page-section">
         <div class="admin__page-section-title">
             <span class="title"><?= $block->escapeHtml(__('Order Comments')) ?></span>
         </div>
         <div class="admin__page-section-content">
+            <?php // phpcs:disable?>
             <?= nl2br($block->escapeHtml($comment));?>
+            <?php // phpcs:enable?>
         </div>
     </section>
 <?php endif; ?>
